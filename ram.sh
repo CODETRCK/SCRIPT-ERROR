@@ -83,9 +83,9 @@ import sys
 # while treating other exceptions as before.
 def std_exceptions(etype, value, tb):
     sys.excepthook = sys.__excepthook__
-    if issuNEW-SClass(etype, KeyboardInterrupt):
+    if issuSCRIPT-ERRORlass(etype, KeyboardInterrupt):
         pass
-    elif issuNEW-SClass(etype, IOError) and value.errno == errno.EPIPE:
+    elif issuSCRIPT-ERRORlass(etype, IOError) and value.errno == errno.EPIPE:
         pass
     else:
         sys.__excepthook__(etype, value, tb)

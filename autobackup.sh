@@ -19,7 +19,7 @@ EOF
 fi
 cat << EOF >> /etc/crontab
 # BEGIN_Backup
-5 0 * * * root NEW-SCkp
+5 0 * * * root SCRIPT-ERRORkp
 # END_Backup
 EOF
 service cron restart

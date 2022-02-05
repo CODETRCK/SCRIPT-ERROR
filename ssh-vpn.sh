@@ -20,7 +20,7 @@ organizationalunit=RAHCHIEL.xyz
 commonname=RAHCHIEL.xyz
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -78,7 +78,7 @@ ln -fs /usr/share/zoneinfo/Asia/Malaysia /etc/localtime
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 
 # install
-apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 NEW-SC apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
+apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 SCRIPT-ERROR apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
 echo "clear" >> .profile
 echo "neofetch --ascii_distro Minix" >> .profile
 
@@ -87,14 +87,14 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -124,7 +124,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -174,7 +174,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -212,58 +212,58 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O add-host "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/add-host.sh"
-wget -O about "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/about.sh"
-wget -O menu "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu.sh"
-wget -O usernew "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/trial.sh"
-wget -O hapus "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/hapus.sh"
-wget -O member "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/member.sh"
-wget -O delete "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/delete.sh"
-wget -O cek "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/cek.sh"
-wget -O restart "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/restart.sh"
-wget -O speedtest "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/speedtest_cli.py"
-wget -O info "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/info.sh"
-wget -O ram "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/ram.sh"
-wget -O renew "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/renew.sh"
-wget -O autokill "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/tendang.sh"
-wget -O change-port "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/change.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/port-ovpn.sh"
-wget -O port-ssl "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/port-ssl.sh"
-wget -O port-wg "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/port-wg.sh"
-wget -O port-tr "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/port-tr.sh"
-wget -O port-sstp "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/port-sstp.sh"
-wget -O port-squid "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/port-squid.sh"
-wget -O port-ws "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/port-ws.sh"
-wget -O port-vless "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/port-vless.sh"
-wget -O port-xray "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/port-xray.sh"
-wget -O wbmn "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/webmin.sh"
-wget -O xp "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/xp.sh"
-wget -O menu-vmess "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-vmess.sh"
-wget -O menu-vless "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-vless.sh"
-wget -O menu-l2tp "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-l2tp.sh"
-wget -O menu-pptp "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-pptp.sh"
-wget -O menu-sstp "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-sstp.sh"
-wget -O menu-ss "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-ss.sh"
-wget -O menu-ssr "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-ssr.sh"
-wget -O menu-trojan "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-trojan.sh"
-wget -O menu-wg "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-wg.sh"
-wget -O menu-ssh "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-ssh.sh"
-wget -O menu-xray "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-xray.sh"
-wget -O running "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/running.sh"
-wget -O menu-trgo "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-trgo.sh"
-wget -O add-dom "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/cf/add-dom.sh"
-wget -O add-cff "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/cf/add-cff.sh"
-wget -O add-cfh "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/cf/add-cfh.sh"
-wget -O menu-cf "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-cf.sh"
-wget -O kernel-updt "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/kernel-updt.sh"
-wget -O autoreboot "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/autoreboot.sh"
-wget -O update "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/update.sh"
-wget -O menu-trgo "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-trgo.sh"
-wget -O menu-xx "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/menu-xx.sh"
-wget -O bbr "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/bbr.sh"
+wget -O add-host "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/add-host.sh"
+wget -O about "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/about.sh"
+wget -O menu "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu.sh"
+wget -O usernew "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/trial.sh"
+wget -O hapus "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/hapus.sh"
+wget -O member "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/member.sh"
+wget -O delete "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/delete.sh"
+wget -O cek "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/cek.sh"
+wget -O restart "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/restart.sh"
+wget -O speedtest "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/info.sh"
+wget -O ram "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/ram.sh"
+wget -O renew "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/renew.sh"
+wget -O autokill "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/tendang.sh"
+wget -O change-port "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/change.sh"
+wget -O port-ovpn "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/port-ovpn.sh"
+wget -O port-ssl "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/port-ssl.sh"
+wget -O port-wg "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/port-wg.sh"
+wget -O port-tr "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/port-tr.sh"
+wget -O port-sstp "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/port-sstp.sh"
+wget -O port-squid "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/port-squid.sh"
+wget -O port-ws "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/port-ws.sh"
+wget -O port-vless "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/port-vless.sh"
+wget -O port-xray "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/port-xray.sh"
+wget -O wbmn "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/webmin.sh"
+wget -O xp "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/xp.sh"
+wget -O menu-vmess "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-vmess.sh"
+wget -O menu-vless "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-vless.sh"
+wget -O menu-l2tp "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-l2tp.sh"
+wget -O menu-pptp "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-pptp.sh"
+wget -O menu-sstp "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-sstp.sh"
+wget -O menu-ss "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-ss.sh"
+wget -O menu-ssr "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-ssr.sh"
+wget -O menu-trojan "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-trojan.sh"
+wget -O menu-wg "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-wg.sh"
+wget -O menu-ssh "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-ssh.sh"
+wget -O menu-xray "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-xray.sh"
+wget -O running "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/running.sh"
+wget -O menu-trgo "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-trgo.sh"
+wget -O add-dom "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/cf/add-dom.sh"
+wget -O add-cff "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/cf/add-cff.sh"
+wget -O add-cfh "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/cf/add-cfh.sh"
+wget -O menu-cf "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-cf.sh"
+wget -O kernel-updt "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/kernel-updt.sh"
+wget -O autoreboot "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/autoreboot.sh"
+wget -O update "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/update.sh"
+wget -O menu-trgo "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-trgo.sh"
+wget -O menu-xx "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/menu-xx.sh"
+wget -O bbr "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/bbr.sh"
 chmod +x bbr
 chmod +x menu-xx
 chmod +x menu-trgo

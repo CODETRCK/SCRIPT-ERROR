@@ -16,7 +16,7 @@ date
 mkdir -p /etc/trojan/
 touch /etc/trojan/akun.conf
 # install v2ray
-wget https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/go.sh && chmod +x go.sh && ./go.sh
+wget https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/go.sh && chmod +x go.sh && ./go.sh
 rm -f /root/go.sh
 bash -c "$(wget -O- https://raw.githubusercontent.com/trojan-gfw/trojan-quickstart/master/trojan-quickstart.sh)"
 mkdir /root/.acme.sh
@@ -654,19 +654,19 @@ systemctl restart v2ray
 systemctl enable v2ray
 systemctl start v2ray
 cd /usr/bin
-wget -O add-ws "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/add-ws.sh"
-wget -O add-vless "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/add-vless.sh"
-wget -O add-tr "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/add-tr.sh"
-wget -O del-ws "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/del-ws.sh"
-wget -O del-vless "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/del-vless.sh"
-wget -O del-tr "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/del-tr.sh"
-wget -O cek-ws "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/cek-ws.sh"
-wget -O cek-vless "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/cek-vless.sh"
-wget -O cek-tr "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/cek-tr.sh"
-wget -O renew-ws "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/renew-ws.sh"
-wget -O renew-vless "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/renew-vless.sh"
-wget -O renew-tr "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/renew-tr.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/CODETRCK/NEW-SC/main/cert.sh"
+wget -O add-ws "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/add-ws.sh"
+wget -O add-vless "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/add-vless.sh"
+wget -O add-tr "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/add-tr.sh"
+wget -O del-ws "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/del-ws.sh"
+wget -O del-vless "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/del-vless.sh"
+wget -O del-tr "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/del-tr.sh"
+wget -O cek-ws "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/cek-ws.sh"
+wget -O cek-vless "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/cek-vless.sh"
+wget -O cek-tr "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/cek-tr.sh"
+wget -O renew-ws "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/renew-ws.sh"
+wget -O renew-vless "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/renew-vless.sh"
+wget -O renew-tr "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/renew-tr.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/CODETRCK/SCRIPT-ERROR/main/cert.sh"
 chmod +x add-ws
 chmod +x add-vless
 chmod +x add-tr

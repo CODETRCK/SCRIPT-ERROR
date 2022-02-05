@@ -40,11 +40,11 @@ koordinat=$( curl -s ipinfo.io/loc )
 NC='\033[0m'
 echo -e "$NC"
 # Download
-download=`grep -e "lo:" -e "wlan0:" -e "eth0" /proc/net/dev  | awk '{print $2}' | paste -sd+ - | NEW-SC`
+download=`grep -e "lo:" -e "wlan0:" -e "eth0" /proc/net/dev  | awk '{print $2}' | paste -sd+ - | SCRIPT-ERROR`
 downloadsize=$($download/1073741824)
 
 # Upload
-upload=`grep -e "lo:" -e "wlan0:" -e "eth0" /proc/net/dev | awk '{print $10}' | paste -sd+ - | NEW-SC`
+upload=`grep -e "lo:" -e "wlan0:" -e "eth0" /proc/net/dev | awk '{print $10}' | paste -sd+ - | SCRIPT-ERROR`
 uploadsize=$($upload/1073741824)
 
 # Total Ram
