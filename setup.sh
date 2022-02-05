@@ -1,20 +1,16 @@
 #!/bin/bash
-
-# install text
-apt update -y
-apt upgrade -y
-apt dist-upgrade -y
-
-# install python
-apt -y install ruby
-gem install lolcat
-apt -y install figlet
-
-# install wget and curl
-apt -y install wget curl
-
-sleep 5
+echo "Checking VPS"
+MYIP=$(wget -qO- ipinfo.io/ip);
+IZIN=$( curl https://raw.githubusercontent.com/adamtech323/daftarip/main/dartarip | grep $MYIP )
+if [ $MYIP = $IZIN ]; then
 clear
+echo -e ""
+else
+clear
+echo "perlu daftar ip dulu pm @TRICKEROVPN untuk daftar"
+exit 0
+sleep 2
+fi
 if [ "${EUID}" -ne 0 ]; then
 		echo "You need to run this script as root"
 		exit 1
@@ -22,14 +18,12 @@ fi
 if [ "$(systemd-detect-virt)" == "openvz" ]; then
 		echo "OpenVZ is not supported"
 		exit 1
-echo "Checking VPS"
-MYIP=$(wget -qO- ipinfo.io/ip);
-IZIN=$( curl https://raw.githubusercontent.com/CODETRCK/ipsec/main/ipsec | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-clear
-echo -e ""
-else
-echo "You're not Allowed to use this script"
+fi
+red='\e[1;31m'
+green='\e[0;32m'
+NC='\e[0m'
+if [ -f "/etc/v2ray/domain" ]; then
+echo "Script Already Installed"
 exit 0
 fi
 
@@ -62,10 +56,11 @@ clear
 echo '============================================='
 echo "Sila Masukkan DOMAIN, Jika Tidak ada KLIK Enter"
 echo '============================================='
+echo "MASUKKAN DOMAIN ANDA ATAU IP,KALAU TIADA TEKAN ENTER TQ"
 read -p "Hostname / Domain: " host
-echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
-echo "IP=$host" >> /var/lib/crot-script/ipvps.conf
-echo "$host" >> /etc/v2ray/domain
+echo "IP=$host" >> /var/lib/premium-script/ipvps..conf
+echo  "$host" >> /root/domain
+echo  "$host" >> /etc/v2ray/domain
 clear
 echo '============================================='
 echo '        Installing SSH & OPENVPN '
